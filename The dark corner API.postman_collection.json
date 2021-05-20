@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "2e859296-fb7a-4f74-af45-876bad4c68ce",
+		"name": "The dark corner API",
+		"description": "Firebase API collection for The dark corner site",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello-world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "hello world test"
+			},
+			"response": []
+		}
+	]
+}
