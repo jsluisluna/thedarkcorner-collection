@@ -7,20 +7,372 @@
 	},
 	"item": [
 		{
-			"name": "hello-world",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user4@email.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\" : \"123456\",\r\n    \"userName\": \"user4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/signup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						},
+						"description": "hello world test"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": ""
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "hello world test"
+					},
+					"response": []
 				},
-				"description": "hello world test"
-			},
-			"response": []
+				{
+					"name": "Add user details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzNmRhZWFiZjhkZDY1ZDRkZTIxZTgyNGI4OTlhMWYzZGEyZjg5NTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjEzNTcyOTAsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTM1NzI5MCwiZXhwIjoxNjIxMzYwODkwLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.lz7WG6VqjQsd_ztRepEg3P4_YFSSQWsD3CQq-eb6EXm6_3uNNUll0K_OV0L4TaROS4GUDAwTUdQnTVaOA-FdRv0ET459QmgyaoN5p-l5-AFax5Z_A7-l1N5ViDb-pTR1cmGgdFU6l4RHzGHZj7IK-pYEdO-l8sNTvZEdK8Ev5iuTCxsFjgKlIvuBCza5euZnuXMJqcaz6gsbkEXww7exvfYFZs-fSGOhspt2Rn7E3D1s8X9uRvwhBTGwswDA8fUfZUqq4IbHdOgf1mdsxWLu91-pmiaq-xtiOcT16YYtShKDoZlttWmMaijmXlCINucBDI_cwLAMVcPAl5Bl0zdP9w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bio\": \"Software developer\",\r\n    \"location\": \"Mexico city\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "hello world test"
+					},
+					"response": []
+				},
+				{
+					"name": "Get authenticated user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzNmRhZWFiZjhkZDY1ZDRkZTIxZTgyNGI4OTlhMWYzZGEyZjg5NTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjEzNjY0MTAsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTM2NjQxMCwiZXhwIjoxNjIxMzcwMDEwLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.YKlGZmkHQpway3BsCwHlc8mxeKeED3edfxAbygU7Sc_RJ7CIuemldbdM2AzI6160NLMuiZ6hoSWoaEafiBayQQF-gB8ouhIzPUAFM38n_ku4v0ePZ2WIGIC4DgrjcSaaVrYdTvFf5IrFIFSET3XNxSjzqAV_0dAWzLgbR3bSttjJxaMtvstdrMNsYxt5ylcnlbNNTGBX7uyLJknI4Mxqp9X2iVDMEhvndD1-aV93sGgySNRbkQSptH_6cMON-q4Y3QG2pUcrVyrE-VZZ7pnrd5M-fSdjQ8IFM_TWnMP-ZLVKHIR52VFTZlzifP-4bBXZNSHl8JrGGuIiGU9rv16lgQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "hello world test"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzNmRhZWFiZjhkZDY1ZDRkZTIxZTgyNGI4OTlhMWYzZGEyZjg5NTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjEyOTY1NjEsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTI5NjU2MSwiZXhwIjoxNjIxMzAwMTYxLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.V8sO0V1WMKxeZx6JRUCWT66WIe43BhFNzmNWUkZu7PL9bXLSu50V8t1YDbs56KS4yGflSYUl_5u5gi6zTlRuUgEEkyoNgvkdHupXOKPcFLYELi681fpqXuHQM5bEaORiJNzxxKGDvgtnEwmpgMUM237E4R1T5qyYBFkvHg2Ar0OOjii73C4u6S4wtlpAk3iInZBkUyWpRvCnMhpGHkvYhxgRfmXrTDjKuBMGwMj8A4T_RfGdjtq2puXDBiodjVUK5FBy0vaiMwfRltB2wBrf81RhMCINcqLhTPx6NcMnChLoPM2Y606rA4c2klKsukbF_1R8zJ36AhvS_RvHuMkeTw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Luis Luna/Downloads/23250481.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/user/image",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"image"
+							]
+						},
+						"description": "hello world test"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documents",
+			"item": [
+				{
+					"name": "Create document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzNmRhZWFiZjhkZDY1ZDRkZTIxZTgyNGI4OTlhMWYzZGEyZjg5NTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjE0MzkyNTAsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTQzOTI1MCwiZXhwIjoxNjIxNDQyODUwLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.aGCzGKLUoPaTyq34cDHcIoiHDzSaiwnDUCHu87BFsM2yl9adX71USa9S_7mUVZm3tEAW2cEicqz_QzxOvu-crbx4Xc7S8OGMjevk8Q8iiecnHZJqdIjux7OAdrb4zWH-Bh1kMNvYniWA_Tx_z9Dd2x_RTaJMntWjeAVGjP1ziHLk3ioS7OvfHrQce5wwe06qjSNBGIcTA9Y79j6cT4hivMrBhGeFUc9_NY_RhsXSgcJno_YJ9RVQfr5SADTzuy5Ww5BMfgXjkhURzrFKxyurKyjYmviQtnx5tysgEbp-J-2nUK4mmWdO5xnQGtKGbbW2gJXGNq-rB9ZmU26flX6vhA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Basilio Bernon\",\r\n    \"category\": \"creepypasta\",\r\n    \"content\": \"Era más de medianoche, caminaba de regreso a casa acompañado de mi madre, una lechuza nos sobrevoló soltando graznidos, mi madre se persignó y bajo la mirada —Es solo un animal— dije con tono escéptico —¡No la mires!— contestó ella sin levantar la cabeza —Está en el árbol— sin reparar lo que hablaba levante la mirada y la vi, la mujer enfundada en prendas blancas escondida entre las copas de los árboles, llevaba el cabello tan largo y negro que se mecía a merced del viento, comenzó a graznar y salió volando —¡Baja la cabeza!— ordenó mi madre —Tiene hambre—\",\r\n    \"title\": \"Las brujas 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/document",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document"
+							]
+						},
+						"description": "Create new document"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all documents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/documents",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"documents"
+							]
+						},
+						"description": "Get documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/document/74mzpyIbZr4ruf7VcSuK",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"74mzpyIbZr4ruf7VcSuK"
+							]
+						},
+						"description": "Get documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Comment on document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOWNmYWE4OGVmMDViNDI0YmU2MjA1ZjQ2YjE4OGQ3MzI1N2JjNDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjE1NDQ4MzMsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTU0NDgzMywiZXhwIjoxNjIxNTQ4NDMzLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.YUuswr-4lVN1f7L-aZrT9Y17OTSvDEWEUtbEIr7Fu7dN_QZ1V9sIlr2RHjcGQMped1djWcjtoYFY5_v3SEWN7i85qIlUGLolThOjh8iiTz-gv_nGyBgrGhPUMxB0UT7DKEz_4oCBd1G5lOXzsXiW4kCEJkTFDZLHI4ppbNZGlOJx-xU5Xm4t2wTDI8ux7DPn48ioKAuXZQNh26vz6UQU6bR3VW5zTbfP_L3rjmbqTg6G2lxY4Tsc8AobGIJo6PyL1oUqV4pjFSidIn_t0WIlnvoEsBdd4uXe7uLgSs38ER25062SRS4867fTDJadEJNlMjWXiFO3XCXd02OwqgPVnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Comment number 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/document/paj1rqQQbPD6M5NbV37g/comment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"paj1rqQQbPD6M5NbV37g",
+								"comment"
+							]
+						},
+						"description": "Create new document"
+					},
+					"response": []
+				},
+				{
+					"name": "Like document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOWNmYWE4OGVmMDViNDI0YmU2MjA1ZjQ2YjE4OGQ3MzI1N2JjNDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjE1NDQ4MzMsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTU0NDgzMywiZXhwIjoxNjIxNTQ4NDMzLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.YUuswr-4lVN1f7L-aZrT9Y17OTSvDEWEUtbEIr7Fu7dN_QZ1V9sIlr2RHjcGQMped1djWcjtoYFY5_v3SEWN7i85qIlUGLolThOjh8iiTz-gv_nGyBgrGhPUMxB0UT7DKEz_4oCBd1G5lOXzsXiW4kCEJkTFDZLHI4ppbNZGlOJx-xU5Xm4t2wTDI8ux7DPn48ioKAuXZQNh26vz6UQU6bR3VW5zTbfP_L3rjmbqTg6G2lxY4Tsc8AobGIJo6PyL1oUqV4pjFSidIn_t0WIlnvoEsBdd4uXe7uLgSs38ER25062SRS4867fTDJadEJNlMjWXiFO3XCXd02OwqgPVnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/document/paj1rqQQbPD6M5NbV37g/like",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"paj1rqQQbPD6M5NbV37g",
+								"like"
+							]
+						},
+						"description": "Create new document"
+					},
+					"response": []
+				},
+				{
+					"name": "Unlike document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzNmRhZWFiZjhkZDY1ZDRkZTIxZTgyNGI4OTlhMWYzZGEyZjg5NTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjE0NDU3NDEsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTQ0NTc0MSwiZXhwIjoxNjIxNDQ5MzQxLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.lWkznSVwcHX9xVLP3u59EjLcanwT11iuo2yvEPBIG4VjWxfgH_nE-AHPvolqc1WCuUEhtEE6m1TWs5m0k-wIXGniTuJuyIw65GfpIJSerLXyzL1mJb8V4MKG-9xpVJ0G07PkYAWWloKEEHNWESqgsyuFLSLuS1Gd72xQrQTKaQX4vbbBEaWvws6KbleA1Vmznnuw2ghzdpJRVrfdM-sYY81IR6_2syrmymPqwZ_71_YQOHbR5QrYlEoJ58Bw4Mq9BnLTY_dbVK-1D_PFlesiu8diebA0sPW6i1313oB9Wd-wbjr2Xdmp9DAeNDWFZt9q6bRcTUn1llA5A8_s3zef_Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/document/74mzpyIbZr4ruf7VcSuK/unlike",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"74mzpyIbZr4ruf7VcSuK",
+								"unlike"
+							]
+						},
+						"description": "Create new document"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete document",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOWNmYWE4OGVmMDViNDI0YmU2MjA1ZjQ2YjE4OGQ3MzI1N2JjNDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdGhlZGFya2Nvcm5lci05MGRlZSIsImF1ZCI6InRoZWRhcmtjb3JuZXItOTBkZWUiLCJhdXRoX3RpbWUiOjE2MjE1NDQ4MzMsInVzZXJfaWQiOiJBelI4NjBTV2tVV0xpQ0hYMGZuSWNIYVFieVkyIiwic3ViIjoiQXpSODYwU1drVVdMaUNIWDBmbkljSGFRYnlZMiIsImlhdCI6MTYyMTU0NDgzMywiZXhwIjoxNjIxNTQ4NDMzLCJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ1c2VyMUBlbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.YUuswr-4lVN1f7L-aZrT9Y17OTSvDEWEUtbEIr7Fu7dN_QZ1V9sIlr2RHjcGQMped1djWcjtoYFY5_v3SEWN7i85qIlUGLolThOjh8iiTz-gv_nGyBgrGhPUMxB0UT7DKEz_4oCBd1G5lOXzsXiW4kCEJkTFDZLHI4ppbNZGlOJx-xU5Xm4t2wTDI8ux7DPn48ioKAuXZQNh26vz6UQU6bR3VW5zTbfP_L3rjmbqTg6G2lxY4Tsc8AobGIJo6PyL1oUqV4pjFSidIn_t0WIlnvoEsBdd4uXe7uLgSs38ER25062SRS4867fTDJadEJNlMjWXiFO3XCXd02OwqgPVnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/document/paj1rqQQbPD6M5NbV37g",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"paj1rqQQbPD6M5NbV37g"
+							]
+						},
+						"description": "Create new document"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
